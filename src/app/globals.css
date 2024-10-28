@@ -3,14 +3,14 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #e3e2df;
+  --foreground: #000000;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #e3e2df;
+    --foreground: #000000;
   }
 }
 
@@ -18,4 +18,13 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  font-size:larger;
+  /* background-image: url(../../public/south-tyrol-8023213.webp);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; */
+}
+
+img {
+  backdrop-filter:none;
 }
