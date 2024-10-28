@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Header () {
     return(
         <div className="flex justify-around p-6 m-2 rounded-xl items-center bg-gray-500 bg-opacity-55 z-10 backdrop-blur-xl">
@@ -8,8 +10,13 @@ export default function Header () {
             </div>
             
             <div className="flex">
-                Favorite
+                <div>
+                    <Link href={`/favorites/`}>Favotits</Link>
+                </div>
+                <div>
+
                 Fake Store
+                </div>
             </div>
         </div>
     )
