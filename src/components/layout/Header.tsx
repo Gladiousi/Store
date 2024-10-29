@@ -1,23 +1,21 @@
+"use client";
+
 import Link from "next/link";
 
-export default function Header () {
-    return(
-        <div className="flex justify-around p-6 m-2 rounded-xl items-center bg-gray-500 bg-opacity-55 z-10 backdrop-blur-xl">
-            {/* <div className="bg-red-400 w-96 h-20 absolute top-0 left-0 z-0 blur-lg"></div> */}
-            
-            <div>
-                img
-            </div>
-            
-            <div className="flex">
-                <div>
-                    <Link href={`/favorites/`}>Favotits</Link>
-                </div>
-                <div>
-
-                Fake Store
-                </div>
-            </div>
+export default function Header() {
+  return (
+    <div className="flex justify-around p-6 m-2 rounded-xl items-center bg-gray-800 bg-opacity-55 z-10 backdrop-blur-xl">
+      <div>
+        <div className="hover:text-gray-100 duration-500">
+          <Link href={`/catalog`}>FakeStore</Link>
         </div>
-    )
+      </div>
+
+      <div className="flex">
+        <div className="hover:text-gray-100 duration-500">
+          <Link href={`/favorites/`}>Favoritets</Link>
+        </div>
+      </div>
+    </div>
+  );
 }

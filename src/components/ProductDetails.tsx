@@ -1,11 +1,12 @@
 "use client";
 
 import { useEffect } from "react";
-import { useParams } from "next/navigation"; 
+import { useParams } from "next/navigation";
 import { useSelector } from "react-redux";
 import { RootState, useAppDispatch } from "../store";
-import { fetchProducts } from "../store/slice/productsSlice";
-import Link from "next/link"; 
+import { fetchProducts } from "@/store/slice/productsSlice";
+import { FaArrowLeft } from "react-icons/fa";
+import Link from "next/link";
 import Image from "next/image";
 
 export default function ProductDetails() {
@@ -28,15 +29,18 @@ export default function ProductDetails() {
   }
 
   if (!product) {
-    return <p>Product not found.</p>;
+    return <p className="min-h-screen flex justify-center items-center">Product not found.</p>;
   }
 
   return (
-    <div className="p-16 min-h-screen">
-      <Link href="/catalog" className="mt-8 text-blue-500 hover:underline">
-        Back to Catalog
-      </Link>
-      <div className="flex flex-col items-center">
+    <div className="p-8 lg:p-16 min-h-screen">
+      <div className="flex flex-col-2 items-center bg-white p-16 rounded-lg h-full">
+        <Link
+          href={`/catalog`}
+          className=" text-black flex items-start h-full"
+        >
+          <FaArrowLeft />
+        </Link>
         <div className="w-full h-96 overflow-hidden relative">
           <Image
             src={product.image}
@@ -46,9 +50,13 @@ export default function ProductDetails() {
             className="object-contain w-full h-full"
           />
         </div>
-        <h1 className="text-2xl font-bold mt-4">{product.title}</h1>
-        <p className="text-lg mt-2">{product.description}</p>
-        <p className="text-xl mt-4 font-semibold">{product.price}$</p>
+        <div className="w-[60%] h-full">
+          <h1 className="text-2xl font-bold flex items-start">
+            {product.title}
+          </h1>
+          <p className="text-xl mt-4 font-semibold ">{product.price}$</p>
+          <p className="text-lg mt-4">{product.description}</p>
+        </div>
       </div>
     </div>
   );
