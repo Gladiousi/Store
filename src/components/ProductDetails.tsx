@@ -29,16 +29,17 @@ export default function ProductDetails() {
   }
 
   if (!product) {
-    return <p className="min-h-screen flex justify-center items-center">Product not found.</p>;
+    return (
+      <p className="min-h-screen flex justify-center items-center">
+        Product not found.
+      </p>
+    );
   }
 
   return (
-    <div className="p-8 lg:p-16 min-h-screen">
-      <div className="flex flex-col-2 items-center bg-white p-16 rounded-lg h-full">
-        <Link
-          href={`/catalog`}
-          className=" text-black flex items-start h-full"
-        >
+    <div className="p-4 md:p-8 lg:p-16 min-h-screen">
+      <div className="flex flex-col-1 flex-wrap lg:flex-nowrap lg:flex-col-2 items-center bg-white p-16 rounded-lg h-full">
+        <Link href={`/catalog`} className=" text-black flex items-start h-full">
           <FaArrowLeft />
         </Link>
         <div className="w-full h-96 overflow-hidden relative">
@@ -50,11 +51,13 @@ export default function ProductDetails() {
             className="object-contain w-full h-full"
           />
         </div>
-        <div className="w-[60%] h-full">
-          <h1 className="text-2xl font-bold flex items-start">
-            {product.title}
-          </h1>
-          <p className="text-xl mt-4 font-semibold ">{product.price}$</p>
+        <div className="w-full lg:w-[60%] h-full mt-4">
+          <div>
+            <h1 className="text-2xl font-bold flex items-start">
+              {product.title}
+            </h1>
+            <p className="text-xl mt-4 font-semibold ">{product.price}$</p>
+          </div>
           <p className="text-lg mt-4">{product.description}</p>
         </div>
       </div>
