@@ -1,6 +1,5 @@
 "use client";
 
-import { FaRegHeart } from "react-icons/fa6";
 import { FaHeart } from "react-icons/fa";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "@/store/index";
@@ -14,10 +13,6 @@ import Link from "next/link";
 const Favorites = () => {
   const dispatch = useDispatch();
   const { favorites } = useSelector((state: RootState) => state.products);
-
-  const handleRemoveFavorite = (id: number) => {
-    dispatch(removeFavorite(id));
-  };
 
   useEffect(() => {
     const savedFavorites: Product[] = JSON.parse(

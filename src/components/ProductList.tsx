@@ -70,9 +70,11 @@ export default function ProductList() {
                 </Link>
                 <button
                   onClick={() => {
-                    isFavorite 
-                      ? dispatch(removeFavorite(product.id)) 
-                      : dispatch(toggleFavorite(product));
+                    if (isFavorite) {
+                      dispatch(removeFavorite(product.id));
+                    } else {
+                      dispatch(toggleFavorite(product));
+                    }
                   }}
                   className={`absolute top-10 right-10 z-10 transition-colors duration-300 transform hover:scale-105 ${
                     isFavorite ? "text-red-500" : "text-white"
